@@ -91,6 +91,10 @@ O projeto segue uma arquitetura em camadas:
 │   └── DateTimeHelper.cs
 ```
 
+### Diagrama
+<img width="2815" height="2268" alt="Mermaid-preview" src="https://github.com/user-attachments/assets/b7c97e17-a2b1-487a-a15a-79f6b969490d" />
+
+
 ---
 
 ## Modelagem do Domínio
