@@ -23,10 +23,14 @@ namespace gs_mobile.Application.Services
         {
             var planetasBase = _repository.ObterPlanetasBase();
 
+            var planetasFiltrados = planetasBase
+                .Where(p => p.Tipo == planeta.Tipo)
+                .ToList();
+
             Planeta maisProximo = null;
             double menorDiferenca = double.MaxValue;
 
-            foreach (var basePlaneta in planetasBase)
+            foreach (var basePlaneta in planetasFiltrados)
             {
                 double diferenca =
                     Math.Abs(planeta.CondicoesFisicas.TemperaturaMedia - basePlaneta.CondicoesFisicas.TemperaturaMedia) +
@@ -41,6 +45,7 @@ namespace gs_mobile.Application.Services
 
             return maisProximo;
         }
+
 
     }
 }

@@ -13,6 +13,7 @@ namespace gs_mobile.Presentation.Views
         double LerGravidade();
         double LerPressao();
         bool LerOxigenio();
+        int LerTipoPlaneta();
 
         void ExibirResultado(string mensagem);
         void ExibirErro(string mensagem);

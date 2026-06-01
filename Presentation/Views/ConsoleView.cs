@@ -10,8 +10,16 @@ namespace gs_mobile.Presentation.Views
     {
         public string LerNomePlaneta()
         {
-            Console.Write("Nome do planeta: ");
-            return Console.ReadLine();
+            while (true)
+            {
+                Console.Write("Nome do planeta: ");
+                var nome = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(nome))
+                    return nome;
+
+                Console.WriteLine("O nome não pode ser vazio.");
+            }
         }
 
         public double LerTemperatura()
@@ -21,14 +29,12 @@ namespace gs_mobile.Presentation.Views
 
         public double LerGravidade()
         {
-            Console.Write("Gravidade: ");
-            return double.Parse(Console.ReadLine());
+            return LerDouble("Gravidade (m/s²): ");
         }
 
         public double LerPressao()
         {
-            Console.Write("Pressão atmosférica: ");
-            return double.Parse(Console.ReadLine());
+            return LerDouble("Pressão atmosférica (atm): ");
         }
 
         public bool LerOxigenio()
@@ -45,6 +51,24 @@ namespace gs_mobile.Presentation.Views
             }
         }
 
+        public int LerTipoPlaneta()
+        {
+            while (true)
+            {
+                Console.WriteLine("\nSelecione o tipo do planeta:");
+                Console.WriteLine("1 - Terrestre");
+                Console.WriteLine("2 - Gasoso");
+
+                Console.Write("Opção: ");
+                var input = Console.ReadLine();
+
+                if (int.TryParse(input, out int tipo) && (tipo == 1 || tipo == 2))
+                    return tipo;
+
+                Console.WriteLine("Opção inválida. Escolha 1 ou 2.");
+            }
+        }
+
         public void ExibirResultado(string mensagem)
         {
             Console.WriteLine("\n=== RESULTADO ===");
@@ -58,20 +82,16 @@ namespace gs_mobile.Presentation.Views
 
         public double LerDouble(string mensagem)
         {
-            double valor;
-            bool valido;
-
-            do
+            while (true)
             {
                 Console.Write(mensagem);
-                valido = double.TryParse(Console.ReadLine(), out valor);
+                var input = Console.ReadLine();
 
-                if (!valido)
-                    Console.WriteLine("Valor inválido. Tente novamente.");
-            } while (!valido);
+                if (double.TryParse(input, out double valor))
+                    return valor;
 
-            return valor;
+                Console.WriteLine("Entrada inválida. Digite um número válido.");
+            }
         }
-
     }
 }

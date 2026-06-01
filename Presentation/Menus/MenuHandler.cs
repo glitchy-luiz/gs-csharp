@@ -35,15 +35,27 @@ namespace gs_mobile.Presentation.Menus
                 switch (opcao)
                 {
                     case "1":
+                        Console.Clear();
                         _controller.Executar();
+
+                        Limpar();
+
                         break;
 
                     case "2":
+                        Console.Clear();
                         _controller.ExibirHistorico();
+
+                        Limpar();
+
                         break;
 
                     case "3":
+                        Console.Clear();
                         _controller.ExibirPlanetasBase();
+
+                        Limpar();
+
                         break;
 
                     case "0":
@@ -55,6 +67,13 @@ namespace gs_mobile.Presentation.Menus
                         break;
                 }
             }
+        }
+
+        private void Limpar()
+        {
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }

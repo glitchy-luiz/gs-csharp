@@ -32,7 +32,21 @@ namespace gs_mobile.Infrastructure.Repositories
                     new CondicoesFisicas(460, 8.87),
                     new Atmosfera("CO2", 92, false),
                     new Coordenadas(0, 0)
+                ),
+                new PlanetaGasoso(
+                    "Júpiter",
+                    new CondicoesFisicas(-110, 24.79),
+                    new Atmosfera("Hidrogênio/Helio", 100, false),
+                    new Coordenadas(0, 0)
+                ),
+
+                new PlanetaGasoso(
+                    "Saturno",
+                    new CondicoesFisicas(-140, 10.44),
+                    new Atmosfera("Hidrogênio/Helio", 140, false),
+                    new Coordenadas(0, 0)
                 )
+
             };
         }
     }
