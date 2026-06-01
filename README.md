@@ -5,7 +5,7 @@ O sistema permite que o usuário insira dados de um planeta fictício e receba u
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 O objetivo do projeto é:
 
@@ -22,7 +22,7 @@ O objetivo do projeto é:
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - C# (.NET Console Application)
 - .NET com suporte à Injeção de Dependência (`Microsoft.Extensions.DependencyInjection`)
@@ -30,7 +30,7 @@ O objetivo do projeto é:
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto segue uma arquitetura em camadas:
 ```
@@ -117,9 +117,96 @@ Cada tipo de planeta implementa:
 CalcularScoreHabitabilidade()
 ```
 
+---
+
+## Funcionalidades
+O sistema permite:
+
+### Criar planeta
+
+Entrada de dados via console:
+
+- Tipo
+- Temperatura
+- Gravidade
+- Pressão atmosférica
+- Presença de oxigênio
+
+
+### Criação de planeta com seleção de tipo
+O usuário pode escolher o tipo do planeta:
+
+- Terrestre
+- Gasoso
+
+Cada tipo possui comportamento próprio na análise de habitabilidade.
+
+### Análise de habitabilidade
+
+- Cálculo de score (0–100)
+- Classificação:
+  - Inabitável
+  - Baixa
+  - Moderada
+  - Alta
+- Explicação detalhada baseada em:
+  - Temperatura
+  - Gravidade
+  - Atmosfera
+
+### Comparação com planetas reais
+
+O sistema compara o planeta criado com planetas pré-definidos:
+
+- 🌍 Terrestres:
+  - Terra
+  - Marte
+  - Vênus
+
+- 🌪 Gasosos:
+  - Júpiter
+  - Saturno
+
+A comparação é feita apenas entre planetas do mesmo tipo.
+
+### Histórico de análises
+
+Registro com:
+Nome do planeta
+Score
+Classificação
+Data (DateTime)
+
+### Menu interativo
+```
+1 - Criar planeta
+2 - Ver histórico
+3 - Ver planetas base
+0 - Sair
+```
+
+---
+
+## Evidências e Exemplo de uso
+
+### Menu
+<img width="201" height="125" alt="image" src="https://github.com/user-attachments/assets/eec481e1-b94b-43fd-a740-249cad59d3b6" />
+
+### Criar Planeta
+<img width="544" height="571" alt="image" src="https://github.com/user-attachments/assets/61dab025-1035-4695-8f2a-a35da8b97e78" />
+
+### Histórico
+<img width="304" height="346" alt="image" src="https://github.com/user-attachments/assets/9caedde5-d225-475f-97bc-bdffc2d24b90" />
+
+### Planetas Base
+<img width="262" height="630" alt="image" src="https://github.com/user-attachments/assets/64f02afd-26d1-42ce-9a02-69d6eda6cf4b" />
+
+
+---
+
 ## Integrantes do grupo
-- Bruno
-- Guilherme
+- Bruno Otávio
+- Guilherme Flores
 - Leonardo
-- Luiz
-- Marcello
+- Luiz Souza
+- Marcello Freitas
